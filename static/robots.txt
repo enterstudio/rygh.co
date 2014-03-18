@@ -1,0 +1,4 @@
+## robots.txt for http://www.drewrygh.com
+User-agent: *
+Disallow: 
+Sitemap: http://www.drewrygh.com/sitemap.xml

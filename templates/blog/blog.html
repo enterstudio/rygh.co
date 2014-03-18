@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}Drew's Blog{% endblock title %}
+
+{% block content %}
+
+
+<ul class="footer-list">
+  <li><p class="p-small"><a href="/">About</a></p></li>
+  <li><p class="p-small"><a class="undl" href="/blog/">Blog</a></p></li>
+  <li><p class="p-title">Writings about code, tech, and startups.</p></li>
+</ul>
+
+<hr id="rule-reg">
+
+
+<ul>
+{% for post in posts %}
+  <li class="blog-list">
+    <h3 class="h2 header-post"><a href="{{ post.title_slug }}">{{ post.title }}</a></h3>
+    <div class="post-date">{{ post.date }}</div>
+    <p class="marbo post-info">{{ post.description }}</p>
+  </li>
+{% endfor %}
+</ul>
+
+
+{% endblock content %}

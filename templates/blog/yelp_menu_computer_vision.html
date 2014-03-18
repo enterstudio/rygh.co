@@ -1,0 +1,77 @@
+{% extends "blog/base_post.html" %}
+
+{% block title %}{{ post.title }} | Drew Rygh{% endblock title %}
+
+
+
+{% block content %}
+
+
+  <ul class="footer-list">
+    <li><p class="p-small"><a href="/">About</a></p></li>
+    <li><p class="p-small"><a href="/blog/">Blog</a></p></li>
+    <li><p class="p-small">></li>
+    <li><p class="p-small"><a  class="undl" href="/blog/{{ post.title_slug }}">{{ post.title }}</a></p></li>
+  </ul>
+  <hr id="toprule">
+  <h1 class="h1-post">{{ post.title }}</h1>
+  <div class="datestamp">{{ post.date }}</div>
+
+
+
+  <p class="marbo">Back in 2012, <a href="http://officialblog.yelp.com/2012/10/yelp-menus-connecting-people-with-great-local-food-porn.html" title="">Yelp introduced menus</a> — a way to see pictures, reviews, and prices of individual items. Prior to that I remember looking through reviews of a
+  restaurant to see what other people suggested. Since the menus weren't online until then, many people thought it 
+  would be a good idea to take pictures of the menus for others to see. Most of these "menu pictures"
+  are taken with low-res camera phones in a dimly lit room. Others are decent, like the example I picked out:</p>
+
+  <img class="post-image" src="{{ url_for('static', filename='img/example_yelp_menu.jpg') }}" alt="A menu picture from Yelp">
+
+  <p class="marbo">
+  Lately I've been interested in computer vision and optical character recognition. For those of you not familiar with OCR, it's an area of computer vision concerned with taking images containing text, and extracting computer-readable text. It's used in check scanning systems in banks, and by post offices to read packages. <i>It's also one of the reasons CAPTCHAs are becoming so difficult to read. I wanted to try out a few APIs to see what kind of results I could get with an out-of-box solution. My goal was to see how well it would perform on some of the menu pictures. I ended up going with <a href="http://ocrsdk.com/">ABBYY OCR API</a> and modifying some of their <a href="https://github.com/abbyysdk/ocrsdk.com/tree/master/Python">example Python code</a>. Here's how it works from the command line:
+  </p>
+
+  <div class="terminal-container">
+    <div class="terminal-top">
+      <div class="terminal-top-text">/bin/bash</div>
+      <div class="mock-buttons">
+        <div class="terminal-but terminal-but-mini"></div>
+        <div class="terminal-but terminal-but-max"></div>
+        <div class="terminal-but"></div>
+      </div>
+    </div>
+    <div class="terminal-box">
+      <div class="terminal-line"><strong>$</strong> python ABBYY/process.py example.jpg output.txt</div>
+      <div class="terminal-line">Uploading...</div>
+      <div class="terminal-line">Result was written to output.txt</div>
+      <div class="terminal-line"><strong>$</strong> cat output.txt</div>
+      <div class="terminal-line">r.nm < hi m.imma carmela - tomato, mozzarella and fresh basil 13</div>
+      <div class="terminal-line">Strozzapreti with sausage, peas and wild mushrooms 12</div>
+      <div class="terminal-line">Spaghetti with clams, zucchini, garlic and parsley 15</div> 
+      <div class="terminal-line">...</div>     
+    </div>
+    <div class="terminal-bottom"></div>
+  </div>
+
+  <p class="marbo">
+  Not bad! I cut out some of the results, but about half the lines read perfectly. The rest were also pretty close, maybe a couple of words off. When I sampled more
+  restaurant menus, I found it was either hit or miss based on the picture quality and type of font.
+  </p>
+
+  <h3 class="subtitle">A step further</h3>
+  <p class="marbo">
+  The only thing that this really proves is that it's possible to read at least <i>some</i> data from crappy menu pictures. While testing this
+  on a handful of pictures, I noticed that some restaurants didn't have their official menu listed, but had a picture of it. Having half of a menu posted by an unproven
+  OCR algorithm would probably cause more harm than good, but the data might be useful for keywords and category classification.
+  </p>
+
+  <h3 class="subtitle">Not good enough</h3>
+  <p class="marbo">
+  Structure seems to be the key ingredient to achieve accuracy with OCR. Having random fancy fonts mixed with small, low-res images is not good enough for most practical uses.
+  I've been playing around with <a href="https://code.google.com/p/tesseract-ocr/" title="Documentation for Tesseract-OCR">Tesseract</a> and have had a similar experience. After training the engine on a single font, it performs pretty well for clear images containing that font. Character and word recognition seem to have great potential, particularily if developers could use it for broad purposes. 
+  </p>
+
+  <div class="discuss"></div>
+
+
+
+{% endblock content %}
