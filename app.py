@@ -1,5 +1,6 @@
 from flask import Flask, request, send_from_directory
 from flask import render_template
+from werkzeug.contrib.fixers import ProxyFix
 import json
 
 app = Flask(__name__, static_folder='static')
@@ -29,6 +30,9 @@ def blog_post(title_slug):
     posts = json.loads(df)
     fp = [p for p in posts if p['title_slug'] == title_slug][0]
     return render_template(fp['file'], post=p)
+
+
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
     app.run()
