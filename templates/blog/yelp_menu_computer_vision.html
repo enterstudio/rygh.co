@@ -2,21 +2,9 @@
 
 {% block title %}{{ post.title }} | Drew Rygh{% endblock title %}
 
-
 {% block content %}
 
-
-  <ul class="footer-list">
-    <li><p class="p-small"><a href="/">About</a></p></li>
-    <li><p class="p-small"><a href="/blog/">Blog</a></p></li>
-    <li><p class="p-small">></li>
-    <li><p class="p-small"><a  class="undl" href="/blog/{{ post.title_slug }}">{{ post.title }}</a></p></li>
-  </ul>
-  <hr id="toprule">
-  <h1 class="h1-post">{{ post.title }}</h1>
-  <div class="datestamp">{{ post.date }}</div>
-
-
+  {{ super() }}
 
   <p class="marbo">Back in 2012, <a href="http://officialblog.yelp.com/2012/10/yelp-menus-connecting-people-with-great-local-food-porn.html" title="">Yelp introduced menus</a> — a way to see pictures, reviews, and prices of individual items. Prior to that I remember looking through reviews of a
   restaurant to see what other people suggested. Since the menus weren't online until then, many people thought it 
