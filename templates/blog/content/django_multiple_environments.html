@@ -1,0 +1,119 @@
+{% extends "blog/base_post.html" %}
+
+{% block title %}{{ post.title }} | Drew Rygh{% endblock title %}
+
+{% block content %}
+  
+<link href="/static/css/prettify.css" type="text/css" rel="stylesheet" />
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+{{ super() }}
+
+<p class="marbo">
+  When starting a new Django project, one of the first things I like to set up is a structured environment.
+  If the project requires multiple environments, such as development, staging, and production, things
+  can get overly complicated if you stick with a single <code>settings.py</code> file. Having logic
+  all over the settings file to check whether we are in development or a production environment is messy.
+  Fortunately, there are solutions which can help to keep things structured. Below I outlined two steps to 
+  make your Django project easier to work with when dealing with multiple environments.
+</p>
+
+<h3 class="subtitle">Use Multiple Settings Files</h3>
+<p class="marbo">
+  The goal is to break up that <code>settings.py</code> file into a Python module containing settings
+  for each of your environments. In this example, let's say you have development, staging, and production 
+  environments. Here is how your project's settings should be structured:
+</p>
+<pre class="prettyprint lang-html">
+  project/
+      project/
+          settings/
+              __init__.py
+              base.py
+              development.py
+              production.py
+              staging.py
+      static/
+      templates/
+      app1/
+      app2/
+      .....
+</pre>
+<p class="marbo">
+  You should have a settings file for each unique environment that your project uses. Also, I included a <code>base.py</code> file in
+  the settings module. This file should contain all of the shared settings. In your other settings files, simply import
+  the base file at the top, before your environment specific configuration.
+</p>
+<pre class="prettyprint lang-py">
+  # development.py
+  from .base import *
+  # Development specific settings go below.
+</pre>
+<p class="marbo">
+  Settings files are one of the only cases where you'll want to use <code>import *</code> over an explicit import. If you have more than one developer,
+  simply replace <code>development.py</code> with <code>dev_drew.py</code> and <code>dev_otherdev.py</code> and so forth. 
+  Also, don't forget to keep all of these files under version control! If code is working on one machine, and not another, you'll be able to go
+  right to your co-workers settings file to compare things.
+</p>
+
+<h3 class="subtitle">Break Up Python Requirements</h3>
+<p class="marbo">
+  Since you have multiple environments, it makes sense to keep all of your Python requirements separated. You probably have testing packages, and tools
+  only needed for development. When installing the requirements on your production server, having those development-only testing tools installed is useless,
+  in fact, it's just another place for things to go wrong!
+</p>
+<p class="marbo">
+  The solution here is almost identical to the one for your settings file: <i>break it up</i>. First, if you aren't using it already, get up and running with
+  <a href="https://pypi.python.org/pypi/virtualenvwrapper.github">virtualenvwrapper</a>. This tool allows you to easily manage all of your Python virtual
+  environments</a>. Typically you'd write out all of the requirements for a project to a single <code>requirements.txt</code> file. However, this causes the same 
+  problems as having a single <code>settings.py</code> — let's break it up into multiple files. We will throw them in a directory called <code>requirements</code>, 
+  which will contain a file to match each of your settings files.
+</p>
+<pre class="prettyprint lang-html">
+  project/
+      project/
+      requirements/
+          base.txt
+          development.txt
+          production.txt
+          staging.txt
+      static/
+      templates/
+      app1/
+      app2/
+      .....
+</pre>
+<p class="marbo">
+  Then, simply write out your requirements to the correct file. If you're new to <a href="https://pypi.python.org/pypi/pip" title="Python Package Manager">pip</a>, you
+  can do this with the command <code>pip freeze > filename.txt</code>. After sorting through all of your requirements, here's what the top of your requirements files
+  should look like:
+</p>
+<pre class="prettyprint lang-html">
+  # requirements/base.txt
+  Django==1.6.2
+  gunicorn==0.17.4
+  wsgiref==0.1.2
+  .....
+
+  # requirements/development.txt
+  -r base.txt
+  Fabric==1.6.1
+  ipython==0.13.2
+  .....
+</pre>
+<p class="marbo">
+  Notice at the top of the development requirements, we add <code>-r base.txt</code> to recursively include all of the base settings. If you're using
+  <a href="https://heroku.com">Heroku</a>, they run <a href="http://theforeman.org/">foreman</a> which asks for the requirements in the project root by default.
+  Simply create the file and recursively include the production requirements. After this, your Django project should have a clean requirements file for each
+  unique environment.
+</p>
+
+<h3 class="subtitle">In Summary</h3>
+<p class="marbo">
+  Handling multiple environments for your Django project is simple and can make deployment and debugging much easier. By breaking down settings and requirements
+  based on the environment, you'll be left with a flexible solution that keeps things organized as your application grows.
+</p>
+
+<div class="discuss"></div>
+
+{% endblock content %}
