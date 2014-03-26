@@ -29,7 +29,7 @@ def blog_post(title_slug):
     df = open('posts.json').read()
     posts = json.loads(df)
     fp = [p for p in posts if p['title_slug'] == title_slug][0]
-    return render_template(fp['file'], post=p)
+    return render_template(fp['file'], post=fp)
 
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
