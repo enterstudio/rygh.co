@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.meta.title[0] }}{% endblock title %}
+
+{% block content %}
+<ul class="footer-list">
+  <li><p class="p-small"><a href="/">About</a></p></li>
+  <li><p class="p-small"><a href="/blog/">Blog</a></p></li>
+  <li><p class="p-small">></li>
+  <li><p class="p-small"><a class="undl" href="/blog/{{ post.meta.slug[0] }}">{{ post.meta.title[0] }}</a></p></li>
+</ul>
+<hr id="toprule">
+
+<h1 class="h1-post">{{ post.meta.title[0] }}</h1>
+<div class="datestamp">{{ post.meta.date[0] }}</div>
+
+{{ post.content|safe }}
+
+<div class="discuss"></div>
+
+{% endblock content %}

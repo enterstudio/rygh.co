@@ -1,9 +1,21 @@
+import sys
 from flask import Flask, request, send_from_directory
 from flask import render_template
+from flask_frozen import Freezer
 from werkzeug.contrib.fixers import ProxyFix
-import json
+from config import *
+from helpers import get_blog_posts
+
 
 app = Flask(__name__, static_folder='static')
+freezer = Freezer(app)
+
+
+# URL Generators for Flask Freezer
+@freezer.register_generator
+def blog_post():
+    for post in get_blog_posts():
+        yield {'title_slug': post['meta']['slug'][0]}
 
 
 @app.route('/robots.txt')
@@ -19,20 +31,21 @@ def index():
 
 @app.route('/blog/')
 def blog():
-    df = open('posts.json').read()
-    posts = json.loads(df)
-    return render_template('blog/blog.html', name='blog', posts=posts)
+    all_posts = get_blog_posts()
+    return render_template('blog.html', name='blog', posts=all_posts)
 
 
-@app.route('/blog/<title_slug>')
+@app.route('/blog/<title_slug>/')
 def blog_post(title_slug):
-    df = open('posts.json').read()
-    posts = json.loads(df)
-    fp = [p for p in posts if p['title_slug'] == title_slug][0]
-    return render_template(fp['file'], post=fp)
+    all_posts = get_blog_posts()
+    post = [p for p in all_posts if p['meta']['slug'][0] == title_slug]
+    return render_template('post.html', post=post[0])
 
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
-    app.run()
+    if len(sys.argv) > 1 and sys.argv[1] == "build":
+        freezer.freeze()
+    else:
+        app.run()

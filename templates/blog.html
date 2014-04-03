@@ -18,9 +18,9 @@
 <ul>
 {% for post in posts %}
   <li class="blog-list">
-    <h3 class="h2 header-post"><a href="{{ post.title_slug }}">{{ post.title }}</a></h3>
-    <div class="post-date">{{ post.date }}</div>
-    <p class="marbo post-info">{{ post.description }}</p>
+    <h3 class="listed"><a href="{{ post.meta.slug[0] }}">{{ post.meta.title[0] }}</a></h3>
+    <div class="post-date">{{ post.meta.date[0] }}</div>
+    <p class="marbo post-info">{{ post.meta.description[0] }}</p>
   </li>
 {% endfor %}
 </ul>
