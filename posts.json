@@ -1,6 +1,13 @@
 [
 
 	{
+	    "title": "Combining models with Django REST Framework",
+	    "title_slug": "combining-models-django-rest-framework",
+	    "description": "How to expose multiple models in a single REST API endpoint.",
+	    "date": "7/6/2014",
+	    "file": "blog/content/drf-combining-models.html"
+	},
+	{
 	    "title": "Handling Multiple Environments With Django",
 	    "title_slug": "handling-multiple-environments-with-django",
 	    "description": "How to structure requirements and settings when dealing with multiple environments.",
