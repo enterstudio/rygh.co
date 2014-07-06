@@ -1,6 +1,7 @@
 import os
 import markdown
 import codecs
+import datetime
 from preprocessors import preprocess
 
 
@@ -20,4 +21,6 @@ def get_blog_posts():
         meta_data = md.Meta
         posts.append({'meta': meta_data, 'content': html})
 
+    posts.sort(key=lambda post: datetime.datetime.strptime(post['meta']['date'][0],
+               '%m/%d/%Y').strftime('%Y %m %d'), reverse=True)
     return posts
