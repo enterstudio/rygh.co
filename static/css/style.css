@@ -841,6 +841,7 @@ img{display: block; margin: 20px auto; border-radius: 5px; border: 1px solid #8A
 div.datestamp{margin-bottom: 5rem; text-align: center; font-size: 1.2em; display: block; color: #777777;}
 div.discuss{height: 50px; width: 100%; line-height: 50px; min-width: 400px; margin: 0 auto;}
 code{font-family: none; font-size: 0.9rem; color: #333333; font-style: italic; font-weight: 300; padding: 1px 5px; border: 1px solid #B7B7B7; background-color: #F7F7F7;}
+ol.ol_indent{margin-left: 2.0 !important;}
 /* Mock Terminal */
 div.terminal-container{-webkit-box-shadow: 0px 0px 5px 1px rgba(0,163,204,1);-moz-box-shadow: 0px 0px 5px 1px rgba(0,163,204,1);box-shadow: 0px 0px 5px 1px rgba(0,163,204,1); background-color: #78D3EA; margin: 30px 0;}
 div.terminal-top{background-color: #D6D2D0; height: 30px; border: 1px solid #8A8684; border-bottom: none; margin-bottom: 0; border-top-left-radius: 5px; border-top-right-radius: 5px;}
