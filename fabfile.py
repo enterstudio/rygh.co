@@ -15,3 +15,8 @@ def build():
     # GZIP CSS.
     with lcd('build/static/css'):
         local('for fn in *; do gzip < ${fn} > ${fn}.gz; done')
+
+
+def deploy():
+    build()
+    local('ansible-playbook deployment/site.yml')
