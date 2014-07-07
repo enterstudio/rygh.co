@@ -1,0 +1,8 @@
+---
+
+- name: install fail2ban for security purposes
+  apt: pkg=fail2ban state=latest
+  sudo: yes
+
+- name: copy over the static application
+  copy: src={{ local_build_dir }} dest={{ app_root_dir }}

@@ -1,0 +1,32 @@
+###
+# Configuration for setting up the  Nginx web server.
+#
+---
+
+- name: ensure Nginx is installed
+  apt: name=nginx
+
+- name: ensure that the Nginx service is stopped
+  service: name=nginx state=stopped
+
+- name: "setup nginx sites-available"
+  template: src=sites_available.j2 dest=/etc/nginx/sites-available/{{ app_name }}
+
+- name: check if nginx has default symbolic linked website file
+  stat: path=/etc/nginx/sites-enabled/default
+  register: nginx_default_file
+
+- name: ensure that the application site is enabled
+  command: ln -s /etc/nginx/sites-available/{{ app_name }}
+           /etc/nginx/sites-enabled/{{ app_name }}
+           creates=/etc/nginx/sites-enabled/{{ app_name }}
+
+- name: delete default symbolic linked website on nginx
+  command: rm /etc/nginx/sites-enabled/default
+  sudo: yes
+  when: nginx_default_file.stat.exists
+  notify:
+    - restart nginx
+
+- name: ensure Nginx service is started
+  service: name=nginx state=started enabled=yes

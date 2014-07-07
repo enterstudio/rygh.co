@@ -2,3 +2,4 @@ build/
 content/
 newrelic.in
 *.pyc
+deployment/group_vars/secrets.yml

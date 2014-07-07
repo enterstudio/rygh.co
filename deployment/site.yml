@@ -1,0 +1,17 @@
+###
+# This playbook deploys the whole application stack in this site.
+#
+---
+
+- name: apply configuration to all nodes
+  hosts: all
+  user: root
+
+  vars_files: 
+    - group_vars/secrets.yml
+
+  roles:
+    - common
+    - users
+    - nginx
+

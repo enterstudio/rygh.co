@@ -1,0 +1,20 @@
+server {
+	server_name www.{{ app_name }};
+	rewrite ^(.*) http://{{ app_name }}$1 permanent; 
+}
+
+server {
+
+    listen         80;
+    server_name    {{ app_name }};
+    root           /home/deploy_user/{{ app_name }}/build;
+    index          index.html index.htm;
+
+    location / {
+       default_type "text/html";
+       try_files $uri.html $uri $uri/ /index.html;
+    }
+
+}
+
+
