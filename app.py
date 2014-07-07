@@ -29,6 +29,11 @@ def index():
     return render_template('index.html', name='index')
 
 
+@app.route('/resume/')
+def resume():
+    return render_template('resume.html', name='resume')
+
+
 @app.route('/blog/')
 def blog():
     all_posts = get_blog_posts()
