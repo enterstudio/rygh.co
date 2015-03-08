@@ -34,6 +34,11 @@ def resume():
     return render_template('resume.html', name='resume')
 
 
+@app.route('/projects/')
+def projects():
+    return render_template('projects.html', name='projects')
+
+
 @app.route('/blog/')
 def blog():
     all_posts = get_blog_posts()

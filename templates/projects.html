@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <meta charset="utf-8" />
+  <title>Projects and Ventures | Drew Rygh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="description" content="Start ups, fitness, technology">
+  <link rel="icon" href="http://jxnblk.com/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48461837-1', 'drewrygh.com');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.7/css/ngDialog.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.7/css/ngDialog-theme-default.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.7/css/ngDialog-theme-plain.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
+  <script src="/static/bower_components/ngDialog/js/ngDialog.min.js"></script>
+  <script src="/static/js/app.js"></script>
+</head> 
+
+<body ng-app="myApp" ng-controller="myCtrl" >
+
+
+
+<div class="wrap maxwi640 pad2">
+  
+  
+
+
+<ul class="footer-list">
+  <li><p class="p-small"><a href="/">About</a></p></li>
+  <li><p class="p-small"><a class="undl" href="/projects/">Projects</a></p></li>
+  <li><p class="p-small"><a href="/blog/">Blog</a></p></li>
+</ul>
+
+
+<hr id="toprule-small">
+
+
+
+    <ul class="proj-list">
+      <li class="proj-item" ng-click="details('chemistryShark')">
+        <img src="/static/img/projects-chemistryshark.png">
+        <h3 class="proj-title">ChemistryShark</h3>
+        <p class="proj-role">Developer</p>
+      </li>
+      <li class="proj-item" ng-click="details('fitspot')">
+        <img src="/static/img/projects-fitspot.png">
+        <h3 class="proj-title">FitSpot</h3>
+        <p class="proj-role">Co-Founder</p>
+      </li>
+      <li class="proj-item" ng-click="details('ionitron')">
+        <img src="/static/img/projects-ionitron.png">
+        <h3 class="proj-title">Ionitron-Github</h3>
+        <p class="proj-role">Developer</p>
+      </li>
+    </ul>
+
+    <ul class="proj-list">
+      <li class="proj-item" ng-click="details('racquetMonster')">
+        <img src="/static/img/projects-racquetmonster.png">
+        <h3 class="proj-title">RacquetMonster</h3>
+        <p class="proj-role">Creator</p>
+      </li>
+    </ul>
+
+
+
+    
+  <hr>
+
+  <footer> 
+    <ul class="footer-list">
+      <li><p class="p-small"><a href="https://plus.google.com/108793891589832293703/posts">Google+</a></p></li>
+      <li><p class="p-small"><a href="http://www.linkedin.com/pub/andrew-rygh/5a/472/976">LinkedIn</a></p></li>
+      <li><p class="p-small"><a href="https://github.com/drewrygh">GitHub</a></p></li>
+    </ul>
+    <p class="p-small ml05">Ashley theme by <a href="http://jxnblk.com">Jxnblk</a>. Modified by Drew Rygh.</p>
+  </footer>
+
+</div>  
+
+
+<script type="text/ng-template" id="chemistryShark">
+    <h1 class="proj-title">ChemistryShark</h1>
+    <p>ChemistryShark is a web app that serves as a resource for chemistry students. It contains titration and molecular weight calculators, as well as a number of tutorials and cheatsheets.</p>
+</script>
+
+<script type="text/ng-template" id="fitspot">
+    <h1 class="proj-title">FitSpot</h1>
+    <p>FitSpot was a venture centered around a web application that gave users access to a network of gyms, yoga studios, and other fitness facilities. Users purchased prepaid credit that could be used at any facility by scanning their keychain barcode tag.</p>
+</script>
+
+<script type="text/ng-template" id="ionitron">
+    <h1 class="proj-title">Ionitron-Github</h1>
+    <p>Ionitron-Github is a bot that was written as an internal project while at <a href="http://drifty.com/">Drifty</a>. Ionitron automates a number of tasks on <a href="http://ionicframework.com/">Ionic's</a> <a href="https://github.com/driftyco/ionic">GitHub repo</a>.</p>
+</script>
+
+<script type="text/ng-template" id="racquetMonster">
+    <h1 class="proj-title">RacquetMonster</h1>
+    <p>RacquetMonster is a tennis news aggregator. It pulls recent tennis news from sources including reddit, YouTube, Twitter, and a number of tennis blogs.</p>
+</script>
+
+
+
+
+</body>
+</html>

@@ -13,6 +13,8 @@
 */
 body, h1, h2, h3, h4, h5, h6, ul, ol, p {
   margin: 0;
+  width: 100%;
+  min-width: 100%;
   padding: 0; }
 
 
@@ -22,6 +24,11 @@ body, h1, h2, h3, h4, h5, h6, ul, ol, p {
 
 
 */
+html{
+  font-size: medium !important;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll; 
+}
 body {
   font-size: 100%;
   line-height: 1.5;
@@ -133,7 +140,7 @@ strong, .bold {
   padding-left: 1rem; }
 
 .pad2 {
-  padding: 2rem; }
+  padding: 2rem 0; }
 
 .padto2 {
   padding-top: 2rem; }
@@ -176,7 +183,7 @@ strong, .bold {
     padding-left: 2rem; }
 
   .pad2 {
-    padding: 4rem; }
+    padding: 4rem 0; }
 
   .padto2 {
     padding-top: 4rem; }
@@ -869,3 +876,46 @@ span.sec_title{margin-top: 7px; font-size: 1.0rem;}
 div.sec_from{font-size: 0.8rem;}
 p.sec_p{font-size: 1.1rem; margin-top: 7px;}
 ul.sec_list{display: block; margin-left: 3rem; margin-bottom: 10px;}
+/* Projects */
+ul.proj-list{
+  list-style: none;
+  display: inline;
+}
+ul.proj-list li img{
+  border: none;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+ul.proj-list li{
+  width: 165px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #EAEAEA;
+  margin: 5px 21px;
+}
+ul.proj-list li:hover{
+  cursor: pointer;
+  border: 1px solid #9B9B9B;
+}
+.proj-title{
+  font-size: 14px;
+  color: #757575;
+  line-height: 16px;
+  height: 16px;
+  margin: 0 auto;
+}
+h1.proj-title{
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 25px;
+}
+ul.proj-list li p.proj-role{
+  font-size: 12px;
+  font-weight: 300;
+  color: #8F8F8F;
+  line-height: 14px;
+  height: 14px;
+  text-align: center;
+  margin: 0 auto;
+}
