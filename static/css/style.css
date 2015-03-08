@@ -910,6 +910,17 @@ h1.proj-title{
   color: #333333;
   margin-bottom: 25px;
 }
+a h1.proj-title{
+  width: auto;
+  display: inline-block;
+  text-decoration: underline;
+}
+a h1.proj-title:hover{
+  color: #03A9F4;
+}
+a.ext-link{
+  display: inline-block;
+}
 ul.proj-list li p.proj-role{
   font-size: 12px;
   font-weight: 300;
