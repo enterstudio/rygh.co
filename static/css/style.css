@@ -832,7 +832,7 @@ div.header-text{font-size: 1.5em; text-align: left; color: #444444; margin: 10px
 p.p-small{font-size: 0.8rem;}
 p.p-title{font-size: 0.8rem; margin-left: 25px; color: #444444; font-style: italic; font-weight: bold;}
 ul.footer-list{list-style: none; display: inline-block; margin: 1rem 0;}
-ul.footer-list li{display: inline-block; margin: 0 0.5rem;}
+ul.footer-list li{display: inline-block; margin: 0 0.3rem;}
 ul.footer-list li a{font-weight: bold;}
 ul.footer-list li a:hover{text-decoration: underline;}
 p.ml05{margin-left: 0.5rem;}
@@ -929,4 +929,15 @@ ul.proj-list li p.proj-role{
   height: 14px;
   text-align: center;
   margin: 0 auto;
+}
+.p-small i{
+  font-size: 20px;
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  color: #444;
+}
+
+.p-small i:hover{
+  color: #00ccff;
 }
