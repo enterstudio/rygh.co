@@ -18,6 +18,7 @@
     ga('send', 'pageview');
   </script>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+  {% block statics %}{% endblock statics %}
 </head> 
 
 <body>
@@ -26,10 +27,12 @@
   
   {% block content %} {% endblock content %}
     
-  <hr>
 
+  {% block footer %}
+  <hr>
   <footer> 
     <ul class="footer-list">
+      <li><p class="p-small p-icon"><a href="http://drewrygh.com"><i class="ion-home"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="mailto:hello@drewrygh.com"><i class="ion-email"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="tel:2627705242"><i class="ion-ios-telephone"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="https://plus.google.com/108793891589832293703/posts"><i class="ion-social-googleplus"></i></a></p></li>
@@ -37,6 +40,7 @@
       <li><p class="p-small p-icon"><a href="https://github.com/drewrygh"><i class="ion-social-github"></i></a></p></li>
     </ul>
   </footer>
+  {% endblock footer %}
 
 </div>  
 

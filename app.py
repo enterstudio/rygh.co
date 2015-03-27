@@ -39,6 +39,11 @@ def projects():
     return render_template('projects.html', name='projects')
 
 
+@app.route('/ion-horizontal-slider/')
+def horizontal_slider_demo():
+    return render_template('ion-horizontal-slider.html', name='ion-horizontal-slider')
+
+
 @app.route('/blog/')
 def blog():
     all_posts = get_blog_posts()
