@@ -1007,3 +1007,14 @@ a.md-button:hover{
     margin: 1.2em 0;
   }
 }
+video::-webkit-media-controls {
+display:none !important;
+}
+.covertop{
+  height: 6px;
+  width: 288px;
+  margin: 0 0 0 1px;
+  background-color: #3A7BF6;
+  position: absolute;
+  top: 0;
+}

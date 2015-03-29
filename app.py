@@ -39,9 +39,9 @@ def projects():
     return render_template('projects.html', name='projects')
 
 
-@app.route('/ion-horizontal-slider/')
+@app.route('/ionic-horizontal-scroll-cards/')
 def horizontal_slider_demo():
-    return render_template('ion-horizontal-slider.html', name='ion-horizontal-slider')
+    return render_template('ionic-horizontal-scroll-cards.html', name='horizontal-scroll-cards')
 
 
 @app.route('/blog/')

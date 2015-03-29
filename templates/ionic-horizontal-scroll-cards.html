@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Ionic Framework | Horizontal Scroll Cards{% endblock title %}
+
+{% block statics %}
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/marvel.min.css') }}">
+<style>
+
+</style>
+{% endblock statics %}
+
+{% block content %}
+
+<h1 class="md-header">Horizontal Scroll Cards</h1>
+<h4 class="md-header">With Ionic Framework and AngularJS</h4>
+
+
+<div class="row">
+  <div class="col-lg-6 col-sm-12">
+    <div class="marvel-device nexus5">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="screen">
+          <video autobuffer autoloop loop autoplay controls='false'>
+            <source src="https://zippy.gfycat.com/PlasticAcrobaticFirefly.webm" type="video/webm">
+            <source src="https://zippy.gfycat.com/PlasticAcrobaticFirefly.mp4" type="video/mp4">
+          </video>          
+        </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-sm-12">
+    <p class="md-info">
+      Horizontal Scroll Cards are a mobile UI component based off of <a href="https://www.spotify.com">Spotify's</a> featured playlist slider.
+      Adding them to your <a href="https://github.com/driftyco/ionic">Ionic</a> app couldn't be any easier! Check out the <a href="https://github.com/drewrygh/ionic-ion-horizontal-scroll-cards">docs</a> and follow the guide to get started.
+    </p>
+    <ul class="md-list">
+      <li><i class="icon ion-checkmark"></i>velocity based scrolling</li>
+      <li><i class="icon ion-checkmark"></i>integrates with Ionic</li>
+      <li><i class="icon ion-checkmark"></i>customizable with SASS</li>
+    </ul>
+    <a href="https://github.com/drewrygh/ionic-ion-horizontal-scroll-cards" class="md-button"><i class="icon ion-social-github"></i>View Documentation</a>
+  </div>
+</div>
+
+
+{% endblock content %}
+
