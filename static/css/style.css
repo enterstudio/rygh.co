@@ -852,7 +852,7 @@ div.discuss{height: 50px; width: 100%; line-height: 50px; min-width: 400px; marg
 code{font-family: none; font-size: 0.9rem; color: #333333; font-style: italic; font-weight: 300; padding: 1px 5px; border: 1px solid #B7B7B7; background-color: #F7F7F7;}
 .ol_indent{margin-left: 2.0rem !important;}
 /* Mock Terminal */
-div.terminal-container{-webkit-box-shadow: 0px 0px 5px 1px rgba(0,163,204,1);-moz-box-shadow: 0px 0px 5px 1px rgba(0,163,204,1);box-shadow: 0px 0px 5px 1px rgba(0,163,204,1); background-color: #78D3EA; margin: 30px 0;}
+div.terminal-container{margin: 30px 0;}
 div.terminal-top{background-color: #D6D2D0; height: 30px; border: 1px solid #8A8684; border-bottom: none; margin-bottom: 0; border-top-left-radius: 5px; border-top-right-radius: 5px;}
 div.terminal-top-text{font-size: 12px; line-height: 30px; vertical-align: center; text-align: center;}
 div.mock-buttons{width: 80px; height: 20px; display: inline-block; float: right; margin-top: -26px;}
@@ -1020,4 +1020,39 @@ display:none !important;
   background-color: #3A7BF6;
   position: absolute;
   top: 0;
+}
+
+/* desert scheme ported from vim to google prettify */
+pre.prettyprint { display: block; background-color: #333; padding: 10px; overflow: auto; }
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #cd5c5c } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
 }
