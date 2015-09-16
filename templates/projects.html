@@ -66,11 +66,16 @@
       </li>
     </ul>
 
-    <ul class="proj-list">
-      <li class="proj-item" ng-click="details('racquetMonster')">
-        <img src="/static/img/projects-racquetmonster.png">
-        <h3 class="proj-title">RacquetMonster</h3>
-        <p class="proj-role">Creator</p>
+    <ul class="proj-list proj-list-end">
+      <li class="proj-item" ng-click="details('ionicScrollCards')">
+        <img src="/static/img/projects-ionic-scroll-cards.png">
+        <h3 class="proj-title">Ionic Scroll Cards</h3>
+        <p class="proj-role">Developer</p>
+      </li>
+      <li class="proj-item" ng-click="details('again')">
+        <img src="/static/img/projects-again.png">
+        <h3 class="proj-title">Again</h3>
+        <p class="proj-role">Developer</p>
       </li>
     </ul>
 
@@ -79,11 +84,10 @@
     
   <hr>
 
-  <footer> 
+  <footer>
     <ul class="footer-list">
       <li><p class="p-small p-icon"><a href="http://drewrygh.com"><i class="ion-home"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="mailto:hello@drewrygh.com"><i class="ion-email"></i></a></p></li>
-      <li><p class="p-small p-icon"><a href="tel:2627705242"><i class="ion-ios-telephone"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="https://plus.google.com/108793891589832293703/posts"><i class="ion-social-googleplus"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="http://www.linkedin.com/pub/andrew-rygh/5a/472/976"><i class="ion-social-linkedin"></i></a></p></li>
       <li><p class="p-small p-icon"><a href="https://github.com/drewrygh"><i class="ion-social-github"></i></a></p></li>
@@ -95,28 +99,33 @@
 
 <script type="text/ng-template" id="chemistryShark">
 
-    <a href="http://chemistryshark.com" class="ext-link"><h1 class="proj-title">ChemistryShark</h1></a>
-    
-    <p>ChemistryShark is a web app that serves as a resource for chemistry students. It contains titration and molecular weight calculators, as well as a number of tutorials and cheatsheets.</p>
+  <a href="http://chemistryshark.com" class="ext-link"><h1 class="proj-title">ChemistryShark</h1></a>
+  <a href="http://chemistryshark.com/mobile-app/" class="proj-android">
+    <img alt="Get it on Google Play"
+         src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+  </a>
+  <p>ChemistryShark is a news feed and resource for chemistry students. It is available on <a href="http://chemistryshark.com/mobile-app/">Android</a> and as a <a href="http://chemistryshark.com">web app</a>.</p>
 </script>
 
 <script type="text/ng-template" id="fitspot">
     <h1 class="proj-title">FitSpot</h1>
-    <p>FitSpot was a venture centered around a web app that gave users access to a network of gyms, yoga studios, and other fitness facilities. Users could purchase prepaid credit, and use it at any facility by scanning their keychain barcode tag.</p>
+    <p>FitSpot was a venture centered around a web app that gave members access to a network of gyms, yoga studios, and other fitness facilities.</p>
 </script>
 
 <script type="text/ng-template" id="ionitron">
     <h1 class="proj-title">Ionitron-Github</h1>
-    <p>Ionitron-Github is a bot that was written as an internal project while at <a href="http://drifty.com/">Drifty</a>. Ionitron automates a number of tasks on <a href="http://ionicframework.com/">Ionic's</a> <a href="https://github.com/driftyco/ionic">GitHub repo</a>.</p>
+    <p>Ionitron-Github is a bot that was written as an internal project while at <a href="http://drifty.com/">Drifty</a>. Ionitron automates a number of tasks on <a href="http://ionicframework.com/">Ionic&#39;s</a> <a href="https://github.com/driftyco/ionic">GitHub repo</a>.</p>
 </script>
 
-<script type="text/ng-template" id="racquetMonster">
-    <h1 class="proj-title">RacquetMonster</h1>
-    <p>RacquetMonster is a tennis news aggregator. It pulls recent tennis news from sources such as YouTube, reddit, Twitter, and a number of tennis blogs.</p>
+<script type="text/ng-template" id="ionicScrollCards">
+    <a href="/ionic-horizontal-scroll-cards/" class="ext-link"><h1 class="proj-title">Ionic Scroll Cards</h1></a>
+    <p>Ionic Scroll Cards are an open-source mobile UI component for <a href="http://ionicframework.com/">Ionic</a>.</p>
 </script>
 
-
-
+<script type="text/ng-template" id="again">
+    <a href="http://againlist.com" class="ext-link"><h1 class="proj-title">Again</h1></a>
+    <p>Again is a mobile app that was created while working at <a href="http://bendyworks.com/">Bendyworks</a>.
+</script>
 
 </body>
 </html>

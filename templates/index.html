@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Drew Rygh | Python Developer - Madison WI{% endblock title %}
+{% block title %}Drew Rygh | Software Developer - Madison WI{% endblock title %}
 
 {% block content %}
 
@@ -13,12 +13,9 @@
 <hr id="toprule-small">
 
 <article class="marbo2">
-  <div class="header-text">Hi! I'm Drew.</div>
-  <p class="marbo">I'm a software engineer currently living in Madison, WI.
-  In the past, I worked at <a href="http://www.drifty.com">Drifty</a> on the <a href="http://www.ionicframework.com">Ionic</a> team.
-  I attend the <a href="http://www.wisc.edu/">University of Wisconsin</a> where I'm studying computer science.
-  Have a project you need developed? Just want to talk? Don't hesitate to <a href="mailto:hello@drewrygh.com">reach out</a> to me!
-  </p>
+  <img class="self" src="{{ url_for('static', filename='img/drewrygh.jpg') }}">
+  <div class="header-text">Drew Rygh</div>
+  <p class="about">Developer at <a href="http://ionicframework.com">Ionic</a>. Studying computer science and philosophy at <a href="http://www.wisc.edu/">Madison</a>.</p>
 </article>
 
 {% endblock content %}

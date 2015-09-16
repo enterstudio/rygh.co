@@ -28,12 +28,6 @@ def static_from_root():
 def index():
     return render_template('index.html', name='index')
 
-
-@app.route('/resume/')
-def resume():
-    return render_template('resume.html', name='resume')
-
-
 @app.route('/projects/')
 def projects():
     return render_template('projects.html', name='projects')
