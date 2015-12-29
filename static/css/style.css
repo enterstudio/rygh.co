@@ -657,7 +657,7 @@ body {
   font-family: 'Gentium Book Basic', Georgia, serif; }
 
 a {
-  color: #00ccff;
+  color: #428bca;
   text-decoration: none; }
 
 a:hover {
@@ -676,7 +676,7 @@ a:hover {
   color: #fff; }
 
 .link {
-  color: #00ccff; }
+  color: #428bca; }
 
 .bg-dkgry {
   background-color: #444444; }
@@ -691,7 +691,7 @@ a:hover {
   background-color: #fff; }
 
 .bg-link {
-  background-color: #00ccff; }
+  background-color: #428bca; }
 
 .boto {
   border-top: 1px solid; }
@@ -725,7 +725,7 @@ a:hover {
 
 .btn-link {
   color: #fff;
-  background-color: #00ccff; }
+  background-color: #428bca; }
   .btn-link:hover {
     color: #fff;
     background-color: #33d6ff; }
@@ -942,7 +942,7 @@ ul.proj-list li p.proj-role{
 }
 
 .p-small i:hover{
-  color: #00ccff;
+  color: #428bca;
 }
 
 /* Mobile Demo */
