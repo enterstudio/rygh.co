@@ -1,4 +1,4 @@
-#### drewrygh.com ####
+#### rygh.co ####
 
 Personal website and blog built with Flask.
 
