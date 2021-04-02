@@ -18,7 +18,7 @@ ecdsa==0.10
 evdev==0.4.3
 feedgenerator==1.7
 fswrap==0.1.2
-gunicorn==18.0
+gunicorn==19.4.0
 hyde==0.8.8
 ioctl-opt==1.2
 ipython==1.2.1
