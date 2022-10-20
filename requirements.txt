@@ -21,7 +21,7 @@ fswrap==0.1.2
 gunicorn==18.0
 hyde==0.8.8
 ioctl-opt==1.2
-ipython==1.2.1
+ipython==7.16.3
 itsdangerous==0.23
 newrelic==2.16.0.12
 paramiko==1.12.2
