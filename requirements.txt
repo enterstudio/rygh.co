@@ -24,7 +24,7 @@ ioctl-opt==1.2
 ipython==1.2.1
 itsdangerous==0.23
 newrelic==2.16.0.12
-paramiko==1.12.2
+paramiko==3.4.0
 pelican==3.3
 pycrypto==2.6.1
 pytz==2013.9
